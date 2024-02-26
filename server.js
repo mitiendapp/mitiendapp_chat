@@ -204,7 +204,7 @@ app.post('/api/chat', async (req, res) => {
             ],
         });
         let userInput;
-        const result = await chat.sendMessage(userInput);
+        const result = await chat.sendMessage.prompt((userInput));
         const response = result.response;
         console.log(response.text());
 
