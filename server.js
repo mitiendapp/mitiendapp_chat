@@ -203,8 +203,8 @@ app.post('/api/chat', async (req, res) => {
                 }
             ],
         });
-        let userInput;
-        const result = await chat.sendMessage.prompt((userInput));
+        let {userInput}=req.body;
+        const result = await chat.sendMessage(userInput);
         const response = result.response;
         console.log(response.text());
 
