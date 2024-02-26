@@ -203,8 +203,8 @@ app.post('/api/chat', async (req, res) => {
                 }
             ],
         });
-
-        const result = await chat.sendMessage("quiero una cara de un mono en la consola");
+        let userInput;
+        const result = await chat.sendMessage(userInput);
         const response = result.response;
         console.log(response.text());
 
