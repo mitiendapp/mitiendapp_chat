@@ -263,8 +263,7 @@ app.post('/api/chat', async (req, res) => {
         let { userInput } = req.body;
 
         // Obtener respuesta del modelo dentro del contexto inicial
-        const modelResponse = (await getModelResponse(initialHistory, userInput)).replace(/\*\*|\n\*|\n/g, ' ');
-
+        const modelResponse = (await getModelResponse(initialHistory, userInput)).replace(/\"|\\\"|\*|\*\*|\n\*|\n/g, '').trim();
      
         // Enviar la respuesta al cliente y finalizar la ejecución
         res.json({ text: modelResponse });
