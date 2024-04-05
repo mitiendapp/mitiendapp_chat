@@ -1,140 +1,182 @@
-// const express =require('express');
+// const express = require('express');
 // const bodyParser = require('body-parser');
 // const cors = require('cors');
-// const {GoogleGenerativeAI} =  require("@google/generative-ai");
+// const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 // const app = express();
-// const port='3000';
-// //const MODEL_NAME = "gemini-pro";
-// //const API_KEY = "AIzaSyB_x81KxqQ_QjsmOCupFiR9UPi02O4m3-o";
+// const port = '3700';
 
 // app.use(bodyParser.json());
 // app.use(cors());
 
-// app.post('/api/chat',async (req,res)=>{
+// app.post('/api/chat', async (req, res) => {
+//     try {
+//         const {
+//             GoogleGenerativeAI,
+//             HarmCategory,
+//             HarmBlockThreshold,
+//         } = require("@google/generative-ai");
 
-    // try {
+//         const MODEL_NAME = "gemini-1.0-pro";
+//         const API_KEY = "AIzaSyB_x81KxqQ_QjsmOCupFiR9UPi02O4m3-o";
 
-    //     const userInput=req.body.userInput;
-    //     const genAI= new GoogleGenerativeAI(API_KEY);
-    //     const model = genAI.getGenerativeModel({model:MODEL_NAME})
-
-    //     const generationConfig = {
-    //         temperature: 0.9,
-    //         topK: 1,
-    //         topP: 1,
-    //         maxOutputTokens: 2048,
-    //       };
-
-    //       const chat = model.startChat({
-    //         generationConfig,
-
-    //         history: [ 
-    //         ],
-    //       });
-
-    //       const result= await chat.sendMessage(userInput)
-
-    //       if (result && result.response) {
-
-    //         const responseText = result.response.text();
-
-    //         if (responseText) {
-    //             res.json({text:responseText})
-    //         }else{
-
-    //             res.status(500).json({error:'Respuesta Vacia del modelo'})
-
-    //         }
-            
-    //       }else{
-    //         res.status(500).json({error:'Respuesta inesperada del modelo'})
-
-    //       }
-        
-        
-    // }  catch (error) {
-    //     console.error('Error:', error);
-    //     res.status(500).json({ error: 'Error en el servidor', details: error.message });
-    // }
-
-//     const {
-//         GoogleGenerativeAI,
-//         HarmCategory,
-//         HarmBlockThreshold,
-//       } = require("@google/generative-ai");
-      
-//       const MODEL_NAME = "gemini-1.0-pro";
-//       const API_KEY = "AIzaSyB_x81KxqQ_QjsmOCupFiR9UPi02O4m3-o";
-      
-//       async function runChat() {
 //         const genAI = new GoogleGenerativeAI(API_KEY);
 //         const model = genAI.getGenerativeModel({ model: MODEL_NAME });
-      
-//         const generationConfig = {
-//           temperature: 0.9,
-//           topK: 1,
-//           topP: 1,
-//           maxOutputTokens: 2048,
-//         };
-      
-        
-//         const chat = model.startChat({
-//           generationConfig,
-//           history: [
-//             {
-//                 role: "user",
-//                 parts: `Nombre de la Empresa: Café VIP
-          
-//                 Misión: En Café VIP, nos dedicamos a ofrecer a nuestros clientes una experiencia excepcional de café artesanal. Nos esforzamos por proporcionar la más alta calidad en cada taza, desde la selección de granos hasta el proceso de preparación, con un enfoque en la excelencia, la sostenibilidad y la satisfacción del cliente.
-                
-//                 Visión: Nos visualizamos como líderes en la industria del café artesanal, reconocidos por nuestra dedicación a la calidad, la innovación y el servicio al cliente. Buscamos expandir nuestra presencia a nivel nacional e internacional, manteniendo siempre nuestros estándares de excelencia y compromiso con la comunidad y el medio ambiente.
-                
-//                 Fecha de Creación: Café VIP fue fundado en el año 2015 por un grupo de amantes del café con una pasión compartida por la calidad y la autenticidad en cada taza.
-                
-//                 Descripción General:
-//                 Café VIP se distingue por su compromiso con el café de alta calidad y su enfoque en el arte de la preparación. Nuestros granos son cuidadosamente seleccionados de las regiones cafetaleras más prestigiosas del mundo, y nuestro equipo de expertos baristas se dedica a perfeccionar cada técnica para ofrecer una experiencia sensorial única a nuestros clientes.
-                
-//                 Nuestro compromiso con la sostenibilidad se refleja en nuestras prácticas comerciales, desde la relación directa con los productores de café hasta la utilización de métodos de cultivo y procesamiento responsables. Además, nos esforzamos por contribuir positivamente a las comunidades locales donde operamos, apoyando iniciativas sociales y ambientales que promuevan el bienestar y el desarrollo sostenible.
-                
-//                 Café VIP ofrece una amplia variedad de productos, que van desde café tostado y molido hasta bebidas especializadas y accesorios para café. Nuestras tiendas están diseñadas para brindar un ambiente acogedor y sofisticado, donde los clientes pueden disfrutar de su café favorito mientras se sumergen en una experiencia sensorial única.
-                
-//                 Nuestra pasión por el café se refleja en cada aspecto de nuestro negocio, desde la selección de ingredientes hasta la atención al cliente. En Café VIP, estamos comprometidos a superar las expectativas de nuestros clientes y a convertir cada visita en una experiencia memorable.`,
-//               },
-//               {
-//                 role: "model",
-//                 parts: "Genial empresa!",
-//               },{
-//                 role: "user",
-//                 parts: `Nombre de la Empresa: mitiendapp
-//                 horario de apertura: 7:00 A:m`
-//               }, {
-//                 role: "model",
-//                 parts: "Horario de apertura a las 7:00 A:m!",
-//               }
 
-//            ],
+//         const generationConfig = {
+//             temperature: 0.9,
+//             topK: 1,
+//             topP: 1,
+//             maxOutputTokens: 2048,
+//         };
+
+//         const chat = model.startChat({
+//             generationConfig,
+//             history: [
+//                 {
+//                     role: "user",
+//                     parts: `que es mitiendapp 
+                    
+//                     es una empresa dedicada a la venta de productos y servicios a través de una plataforma en línea. Ofrece una amplia gama de categorías, que incluyen: 
+//                     Electrónica: Teléfonos inteligentes, computadoras portátiles, televisores y más.Hogar y cocina: 
+//                     Electrodomésticos, muebles, decoración y artículos para el hogar. Moda: Ropa, zapatos, accesorios y artículos de belleza.
+//                     Salud y bienestar: Vitaminas, suplementos, productos para el cuidado personal y equipos de fitness.
+//                     Juguetes y juegos: Juguetes para niños de todas las edades, juegos de mesa y videojuegos.
+//                     Libros y papelería:** Libros, material escolar y suministros de oficina.
+//                     Deportes y aire libre: Ropa deportiva, equipos y accesorios para una variedad de actividades al aire libre.
+//                     mitiendapp se compromete a brindar una experiencia de compra conveniente y confiable, ofreciendo: 
+//                     Una amplia selección de productos de alta calidad. 
+//                     Precios competitivos y ofertas regulares.
+//                     Entrega rápida y confiable. 
+//                     Servicio al cliente receptivo y servicial.
+//                     Ya sea que estés buscando los últimos dispositivos electrónicos, artículos esenciales para el hogar o regalos únicos, mitiendapp tiene algo para todos. Con su horario de atención a partir de las 7:00 a. m., puedes comenzar a comprar temprano y aprovechar las mejores ofertas."`,
+//                 },
+//                 {
+//                     role: "model",
+//                     parts: "Genial empresa!",
+//                 }, {
+//                     role: "user",
+//                     parts: `Nombre de la Empresa: mitiendapp
+//                     horario de apertura: 7:00 A:m`
+//                 }, {
+//                     role: "model",
+//                     parts: "Horario de apertura a las 7:00 A:m!",
+//                 }
+//             ],
 //         });
-        
-//         const result= await chat.sendMessage("que es mitiendapp")
-//         // const result = await chat.sendMessage("YOUR_USER_INPUT");
+//         let {userInput}=req.body;
+//         const result = await chat.sendMessage(userInput);
 //         const response = result.response;
 //         console.log(response.text());
+
+//         // Enviar la respuesta al cliente y finalizar la ejecución
+//         res.json({ text: response.text() });
+//     } catch (error) {
+//         console.error('Error:', error);
+//         res.status(500).json({ error: 'Error en el servidor', details: error.message });
 //     }
-//       runChat();
-    
+// });
 
-// })
-
-// app.listen(port, ()=>{
+// app.listen(port, () => {
 //     console.log(`Servidor escuchando en http://localhost:${port}`);
-// })
+// });
 
+// const express = require('express');
+// const bodyParser = require('body-parser');
+// const cors = require('cors');
+// const { GoogleGenerativeAI } = require("@google/generative-ai");
 
+// const app = express();
+// const port = '3700';
 
+// app.use(bodyParser.json());
+// app.use(cors());
 
-//----------------------------------------------------
+// // Historial inicial
+// const initialHistory = [
+//     {
+//         role: "user",
+//         parts: `que es mitiendapp 
+                    
+//         es una empresa dedicada a la venta de productos y servicios a través de una plataforma en línea. Ofrece una amplia gama de categorías, que incluyen: 
+//         Electrónica: Teléfonos inteligentes, computadoras portátiles, televisores y más.Hogar y cocina: 
+//         Electrodomésticos, muebles, decoración y artículos para el hogar. Moda: Ropa, zapatos, accesorios y artículos de belleza.
+//         Salud y bienestar: Vitaminas, suplementos, productos para el cuidado personal y equipos de fitness.
+//         Juguetes y juegos: Juguetes para niños de todas las edades, juegos de mesa y videojuegos.
+//         Libros y papelería:** Libros, material escolar y suministros de oficina.
+//         Deportes y aire libre: Ropa deportiva, equipos y accesorios para una variedad de actividades al aire libre.
+//         mitiendapp se compromete a brindar una experiencia de compra conveniente y confiable, ofreciendo: 
+//         Una amplia selección de productos de alta calidad. 
+//         Precios competitivos y ofertas regulares.
+//         Entrega rápida y confiable. 
+//         Servicio al cliente receptivo y servicial.
+//         Ya sea que estés buscando los últimos dispositivos electrónicos, artículos esenciales para el hogar o regalos únicos, mitiendapp tiene algo para todos. Con su horario de atención a partir de las 7:00 a. m., puedes comenzar a comprar temprano y aprovechar las mejores ofertas.`,
+//     },
+//     {
+//         role: "model",
+//         parts: "Genial empresa!",
+//     },
+// ];
 
+// // Obtener respuesta del modelo dentro del contexto
+// const getModelResponse = async (context, userInput) => {
+//     // Preguntas válidas dentro del contexto
+//     const validQuestions = [
+//         "que es mitiendapp",
+//         "que puedo comprar en mitiendapp",
+//         "a que hora abre mitiendapp",
+//         "hola"
+//     ];
+
+//     // Verificar si la pregunta está dentro del contexto esperado
+//     if (!validQuestions.includes(userInput.toLowerCase())) {
+//         throw new Error('Pregunta fuera de contexto');
+//     }
+
+//     const MODEL_NAME = "gemini-1.0-pro";
+//     const API_KEY = "AIzaSyB_x81KxqQ_QjsmOCupFiR9UPi02O4m3-o";
+
+//     const genAI = new GoogleGenerativeAI(API_KEY);
+//     const model = genAI.getGenerativeModel({ model: MODEL_NAME });
+
+//     const generationConfig = {
+//         temperature: 0.9,
+//         topK: 1,
+//         topP: 1,
+//         maxOutputTokens: 2048,
+//     };
+
+//     const chat = model.startChat({
+//         generationConfig,
+//         history: context,
+//     });
+
+//     const result = await chat.sendMessage(userInput);
+//     return result.response.text();
+// };
+
+// app.post('/api/chat', async (req, res) => {
+//     try {
+//         let { userInput } = req.body;
+
+//         // Obtener respuesta del modelo dentro del contexto inicial
+//         const modelResponse = await getModelResponse(initialHistory, userInput);
+
+//         // Enviar la respuesta al cliente y finalizar la ejecución
+//         res.json({ text: modelResponse });
+//     } catch (error) {
+//         console.error('Error:', error);
+//         if (error.toString().includes('Pregunta fuera de contexto')) {
+//             res.status(500).json({ error: 'Error en el servidor', details: 'El modelo no está entrenado para responder a esta pregunta.' });
+//         } else {
+//             res.status(500).json({ error: 'Error en el servidor', details: error.message });
+//         }
+//     }
+// });
+
+// app.listen(port, () => {
+//     console.log(`Servidor escuchando en http://localhost:${port}`);
+// });
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -147,69 +189,85 @@ const port = '3000';
 app.use(bodyParser.json());
 app.use(cors());
 
+// Historial inicial
+const initialHistory = [
+    {
+        role: "user",
+        parts: `que es mitiendapp 
+                    
+        es una empresa dedicada a la venta de productos y servicios a través de una plataforma en línea. Ofrece una amplia gama de categorías, que incluyen: 
+        Electrónica: Teléfonos inteligentes, computadoras portátiles, televisores y más.Hogar y cocina: 
+        Electrodomésticos, muebles, decoración y artículos para el hogar. Moda: Ropa, zapatos, accesorios y artículos de belleza.
+        Salud y bienestar: Vitaminas, suplementos, productos para el cuidado personal y equipos de fitness.
+        Juguetes y juegos: Juguetes para niños de todas las edades, juegos de mesa y videojuegos.
+        Libros y papelería:** Libros, material escolar y suministros de oficina.
+        Deportes y aire libre: Ropa deportiva, equipos y accesorios para una variedad de actividades al aire libre.
+        mitiendapp se compromete a brindar una experiencia de compra conveniente y confiable, ofreciendo: 
+        Una amplia selección de productos de alta calidad. 
+        Precios competitivos y ofertas regulares.
+        Entrega rápida y confiable. 
+        Servicio al cliente receptivo y servicial.
+        Ya sea que estés buscando los últimos dispositivos electrónicos, artículos esenciales para el hogar o regalos únicos, mitiendapp tiene algo para todos. Con su horario de atención a partir de las 7:00 a. m., puedes comenzar a comprar temprano y aprovechar las mejores ofertas.`,
+    },
+    {
+        role: "model",
+        parts: "Genial empresa!",
+    },
+];
+
+// Obtener respuesta del modelo dentro del contexto
+const getModelResponse = async (context, userInput) => {
+    // Preguntas válidas dentro del contexto
+    const validQuestions = [
+        "que es mitiendapp",
+        "que puedo comprar en mitiendapp",
+        "a que hora abre mitiendapp",
+        "hola",
+        "como puedo crear un producto en mitiendapp",
+        "como puedo comprar en mitiendapp",
+        "gracias",
+        "adios",
+        "no adios",
+        "si adios"
+    ];
+
+    // Verificar si la pregunta está dentro del contexto esperado
+    if (!validQuestions.includes(userInput.toLowerCase())) {
+        return 'El modelo no está entrenado para responder a esta pregunta.';
+    }
+
+    const MODEL_NAME = "gemini-1.0-pro";
+    const API_KEY = "AIzaSyB_x81KxqQ_QjsmOCupFiR9UPi02O4m3-o";
+
+    const genAI = new GoogleGenerativeAI(API_KEY);
+    const model = genAI.getGenerativeModel({ model: MODEL_NAME });
+
+    const generationConfig = {
+        temperature: 0.9,
+        topK: 1,
+        topP: 1,
+        maxOutputTokens: 2048,
+    };
+
+    const chat = model.startChat({
+        generationConfig,
+        history: context,
+    });
+
+    const result = await chat.sendMessage(userInput);
+    return result.response.text();
+};
+
 app.post('/api/chat', async (req, res) => {
     try {
-        const {
-            GoogleGenerativeAI,
-            HarmCategory,
-            HarmBlockThreshold,
-        } = require("@google/generative-ai");
+        let { userInput } = req.body;
 
-        const MODEL_NAME = "gemini-1.0-pro";
-        const API_KEY = "AIzaSyB_x81KxqQ_QjsmOCupFiR9UPi02O4m3-o";
+        // Obtener respuesta del modelo dentro del contexto inicial
+        const modelResponse = (await getModelResponse(initialHistory, userInput)).replace(/\*\*|\n\*|\n/g, ' ');
 
-        const genAI = new GoogleGenerativeAI(API_KEY);
-        const model = genAI.getGenerativeModel({ model: MODEL_NAME });
-
-        const generationConfig = {
-            temperature: 0.9,
-            topK: 1,
-            topP: 1,
-            maxOutputTokens: 2048,
-        };
-
-        const chat = model.startChat({
-            generationConfig,
-            history: [
-                {
-                    role: "user",
-                    parts: `Nombre de la Empresa: Café VIP
-              
-                  Misión: En Café VIP, nos dedicamos a ofrecer a nuestros clientes una experiencia excepcional de café artesanal. Nos esforzamos por proporcionar la más alta calidad en cada taza, desde la selección de granos hasta el proceso de preparación, con un enfoque en la excelencia, la sostenibilidad y la satisfacción del cliente.
-                  
-                  Visión: Nos visualizamos como líderes en la industria del café artesanal, reconocidos por nuestra dedicación a la calidad, la innovación y el servicio al cliente. Buscamos expandir nuestra presencia a nivel nacional e internacional, manteniendo siempre nuestros estándares de excelencia y compromiso con la comunidad y el medio ambiente.
-                  
-                  Fecha de Creación: Café VIP fue fundado en el año 2015 por un grupo de amantes del café con una pasión compartida por la calidad y la autenticidad en cada taza.
-                  
-                  Descripción General:
-                  Café VIP se distingue por su compromiso con el café de alta calidad y su enfoque en el arte de la preparación. Nuestros granos son cuidadosamente seleccionados de las regiones cafetaleras más prestigiosas del mundo, y nuestro equipo de expertos baristas se dedica a perfeccionar cada técnica para ofrecer una experiencia sensorial única a nuestros clientes.
-                  
-                  Nuestro compromiso con la sostenibilidad se refleja en nuestras prácticas comerciales, desde la relación directa con los productores de café hasta la utilización de métodos de cultivo y procesamiento responsables. Además, nos esforzamos por contribuir positivamente a las comunidades locales donde operamos, apoyando iniciativas sociales y ambientales que promuevan el bienestar y el desarrollo sostenible.
-                  
-                  Café VIP ofrece una amplia variedad de productos, que van desde café tostado y molido hasta bebidas especializadas y accesorios para café. Nuestras tiendas están diseñadas para brindar un ambiente acogedor y sofisticado, donde los clientes pueden disfrutar de su café favorito mientras se sumergen en una experiencia sensorial única.
-                  
-                  Nuestra pasión por el café se refleja en cada aspecto de nuestro negocio, desde la selección de ingredientes hasta la atención al cliente. En Café VIP, estamos comprometidos a superar las expectativas de nuestros clientes y a convertir cada visita en una experiencia memorable.`,
-                },
-                {
-                    role: "model",
-                    parts: "Genial empresa!",
-                }, {
-                    role: "user",
-                    parts: `Nombre de la Empresa: mitiendapp
-                    horario de apertura: 7:00 A:m`
-                }, {
-                    role: "model",
-                    parts: "Horario de apertura a las 7:00 A:m!",
-                }
-            ],
-        });
-        let {userInput}=req.body;
-        const result = await chat.sendMessage(userInput);
-        const response = result.response;
-        console.log(response.text());
-
+     
         // Enviar la respuesta al cliente y finalizar la ejecución
-        res.json({ text: response.text() });
+        res.json({ text: modelResponse });
     } catch (error) {
         console.error('Error:', error);
         res.status(500).json({ error: 'Error en el servidor', details: error.message });
